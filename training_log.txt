@@ -1,0 +1,68 @@
+loading annotations into memory...
+Done (t=4.13s)
+creating index...
+index created!
+Dataset directory: /home/user/AI-Hackathon24/dataloader
+Data root path: /home/user/AI-Hackathon24/dataloader/features/gtea_png/png
+Loading COCO annotations from: /home/user/AI-Hackathon24/dataloader/merged.json
+
+Image ID 0:
+File name: features/gtea_png/png/S2_Coffee_C1/0000000001.png
+Trying paths:
+- /home/user/AI-Hackathon24/dataloader/features/gtea_png/png/S2_Coffee_C1/0000000001.png (NOT FOUND)
+- /home/user/AI-Hackathon24/dataloader/features/gtea_png/png/features/gtea_png/png/S2_Coffee_C1/0000000001.png (NOT FOUND)
+- /home/user/AI-Hackathon24/dataloader/features/gtea_png/png/0000000001.png (NOT FOUND)
+- /home/user/AI-Hackathon24/dataloader/features/gtea_png/png/S2_Coffee_C1/0000000001.png (NOT FOUND)
+- /home/user/AI-Hackathon24/dataloader/features/gtea_png/png/S2_Coffee_C1/0000000001.png (NOT FOUND)
+- /home/user/AI-Hackathon24/dataloader/features/gtea_png/png/S2_Coffee_C1/0000000001.png (NOT FOUND)
+
+Image ID 1:
+File name: features/gtea_png/png/S2_Coffee_C1/0000000001.png
+Trying paths:
+- /home/user/AI-Hackathon24/dataloader/features/gtea_png/png/S2_Coffee_C1/0000000001.png (NOT FOUND)
+- /home/user/AI-Hackathon24/dataloader/features/gtea_png/png/features/gtea_png/png/S2_Coffee_C1/0000000001.png (NOT FOUND)
+- /home/user/AI-Hackathon24/dataloader/features/gtea_png/png/0000000001.png (NOT FOUND)
+- /home/user/AI-Hackathon24/dataloader/features/gtea_png/png/S2_Coffee_C1/0000000001.png (NOT FOUND)
+- /home/user/AI-Hackathon24/dataloader/features/gtea_png/png/S2_Coffee_C1/0000000001.png (NOT FOUND)
+- /home/user/AI-Hackathon24/dataloader/features/gtea_png/png/S2_Coffee_C1/0000000001.png (NOT FOUND)
+
+Image ID 2:
+File name: features/gtea_png/png/S2_Coffee_C1/0000000002.png
+Trying paths:
+- /home/user/AI-Hackathon24/dataloader/features/gtea_png/png/S2_Coffee_C1/0000000002.png (NOT FOUND)
+- /home/user/AI-Hackathon24/dataloader/features/gtea_png/png/features/gtea_png/png/S2_Coffee_C1/0000000002.png (NOT FOUND)
+- /home/user/AI-Hackathon24/dataloader/features/gtea_png/png/0000000002.png (NOT FOUND)
+- /home/user/AI-Hackathon24/dataloader/features/gtea_png/png/S2_Coffee_C1/0000000002.png (NOT FOUND)
+- /home/user/AI-Hackathon24/dataloader/features/gtea_png/png/S2_Coffee_C1/0000000002.png (NOT FOUND)
+- /home/user/AI-Hackathon24/dataloader/features/gtea_png/png/S2_Coffee_C1/0000000002.png (NOT FOUND)
+
+Image ID 3:
+File name: features/gtea_png/png/S2_Coffee_C1/0000000002.png
+Trying paths:
+- /home/user/AI-Hackathon24/dataloader/features/gtea_png/png/S2_Coffee_C1/0000000002.png (NOT FOUND)
+- /home/user/AI-Hackathon24/dataloader/features/gtea_png/png/features/gtea_png/png/S2_Coffee_C1/0000000002.png (NOT FOUND)
+- /home/user/AI-Hackathon24/dataloader/features/gtea_png/png/0000000002.png (NOT FOUND)
+- /home/user/AI-Hackathon24/dataloader/features/gtea_png/png/S2_Coffee_C1/0000000002.png (NOT FOUND)
+- /home/user/AI-Hackathon24/dataloader/features/gtea_png/png/S2_Coffee_C1/0000000002.png (NOT FOUND)
+- /home/user/AI-Hackathon24/dataloader/features/gtea_png/png/S2_Coffee_C1/0000000002.png (NOT FOUND)
+
+Image ID 4:
+File name: features/gtea_png/png/S2_Coffee_C1/0000000003.png
+Trying paths:
+- /home/user/AI-Hackathon24/dataloader/features/gtea_png/png/S2_Coffee_C1/0000000003.png (NOT FOUND)
+- /home/user/AI-Hackathon24/dataloader/features/gtea_png/png/features/gtea_png/png/S2_Coffee_C1/0000000003.png (NOT FOUND)
+- /home/user/AI-Hackathon24/dataloader/features/gtea_png/png/0000000003.png (NOT FOUND)
+- /home/user/AI-Hackathon24/dataloader/features/gtea_png/png/S2_Coffee_C1/0000000003.png (NOT FOUND)
+- /home/user/AI-Hackathon24/dataloader/features/gtea_png/png/S2_Coffee_C1/0000000003.png (NOT FOUND)
+- /home/user/AI-Hackathon24/dataloader/features/gtea_png/png/S2_Coffee_C1/0000000003.png (NOT FOUND)
+Loading images from: /home/user/AI-Hackathon24/dataloader/features/gtea_png/png
+Found 0 valid images out of 51752 total images
+Traceback (most recent call last):
+  File "/home/user/AI-Hackathon24/train_model.py", line 8, in <module>
+    from dataloader.gtea_dataset import GTEADataset
+  File "/home/user/AI-Hackathon24/dataloader/gtea_dataset.py", line 215, in <module>
+    dataset = GTEADataset(dataset_dir='/home/user/AI-Hackathon24/dataloader')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/AI-Hackathon24/dataloader/gtea_dataset.py", line 98, in __init__
+    raise ValueError("No valid images found. Please check the data paths.")
+ValueError: No valid images found. Please check the data paths.

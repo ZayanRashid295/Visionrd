@@ -55,7 +55,7 @@ python labels_visualization.py ./data/gtea/videos ./data/gtea/groundTruth ./data
 
 - **Description**:
 
-This script visualizes hand annotations on a video by overlaying bounding boxes and keypoints on each frame. The annotations, stored in a JSON file, are processed to draw keypoints and finger connections on the video, which is then saved as a new output video. The tool supports real-time visualization and can be stopped by pressing 'q'.
+This script visualizes hand annotations on a video by overlaying bounding boxes, keypoints, and segmentation masks on each frame. The annotations, stored in a JSON file, are processed to draw keypoints, finger connections, and segmentation masks on the video, which is then saved as a new output video. The tool supports real-time visualization and can be stopped by pressing 'q'.
 
 - **How to Run**:
 
@@ -99,3 +99,13 @@ python action_visualization.py ./data/gtea/videos ./data/gtea/frame_labels ./out
 
 
 ```
+
+## **XML Visualization**
+
+- **Description**:
+
+This script processes an XML file containing annotations and visualizes them on the corresponding images, saving the result as a video.
+
+- **How to Run**:
+
+Use the following commands to run the 'xml_vis.py' file

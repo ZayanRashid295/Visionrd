@@ -6,12 +6,14 @@ def overlay_action_labels(data_dir, output_dir):
 
     os.makedirs(output_dir, exist_ok=True)
 
-    frame_dir = os.path.join(data_dir, 'FRAMES')
+    frame_dir = os.path.join(data_dir, 'features/gtea_png/png')
     label_dir = os.path.join(data_dir, 'actions')
 
     subfolders = os.listdir(frame_dir)
 
     for subfolder in subfolders:
+        if not os.path.isdir(os.path.join(frame_dir, subfolder)):
+            continue
 
         curr_folder = os.path.join(frame_dir, subfolder)
         curr_frames = os.listdir(curr_folder)
@@ -34,7 +36,7 @@ def overlay_action_labels(data_dir, output_dir):
        
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Overlay action labels on frames")
-    parser.add_argument("--data_dir", default='data', help="Directory containing frames (images)")
+    parser.add_argument("--data_dir", default='/home/user/AI-Hackathon24/data', help="Directory containing frames (images)")
     parser.add_argument("--output_dir", default='data/visualized_actions', help="Directory to save the processed frames")
     args = parser.parse_args()
     overlay_action_labels(args.data_dir, args.output_dir)

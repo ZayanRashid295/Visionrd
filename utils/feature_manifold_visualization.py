@@ -35,6 +35,16 @@ def tsne(args):
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
     
+    # Check if the input file exists
+    if not os.path.exists(args.input):
+        print(f"Input file {args.input} not found.")
+        return
+
+    # Check if the label file exists
+    if not os.path.exists(args.label):
+        print(f"Label file {args.label} not found.")
+        return
+
     # Process input file (video or numpy array)
     if args.input.endswith("mp4") or args.input.endswith("avi"):
         imgs_list = []
@@ -53,10 +63,19 @@ def tsne(args):
 
     # Read labels from the file
     with open(args.label, "r") as label_file:
-        labels = label_file.read().split('\n')[:-1]
+        labels = label_file.read().strip().split('\n')
+
+    # Debugging information
+    print(f"Number of feature vectors: {feature.shape[1]}")
+    print(f"Number of labels: {len(labels)}")
+
+    # Ensure the number of labels matches the number of feature vectors
+    if feature.shape[1] != len(labels):
+        print("Error: The number of labels does not match the number of feature vectors.")
+        return
 
     # Perform t-SNE dimensionality reduction
-    tsne = TSNE(n_components=2)
+    tsne = TSNE(n_components=2, random_state=42)  # Added random_state for reproducibility
     tsne_obj = tsne.fit_transform(feature.T)
 
     # Create a DataFrame for plotting
@@ -65,11 +84,12 @@ def tsne(args):
                             'label': labels})
 
     # Create the scatterplot
-    img = sns.scatterplot(x="X", y="Y", hue="label", data=tsne_df)
-    img.legend(ncol=4, fontsize=5)
+    plt.figure(figsize=(10, 8))  # Define figure size
+    sns.scatterplot(x="X", y="Y", hue="label", data=tsne_df, palette="viridis", s=50, alpha=0.7)
+    plt.legend(title='Labels', bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
     
     # Save the plot to the specified output directory
-    img.figure.savefig(os.path.join(output_dir, "t-SNE_visualize.png"), bbox_inches='tight', dpi=500)
+    plt.savefig(os.path.join(output_dir, "t-SNE_visualize.png"), bbox_inches='tight', dpi=300)
     plt.close()
 
 def get_args():
